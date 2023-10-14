@@ -72,6 +72,7 @@ public class Character_should
     }
     [Theory]
     [InlineData(10,4)]
+    [InlineData(20,3)]
     public void take_damage(int roll, int expectedHP)
     {
         ICharacter subject = new Character();
