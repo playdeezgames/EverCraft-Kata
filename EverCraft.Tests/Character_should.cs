@@ -25,4 +25,12 @@ public class Character_should
         ICharacter subject =new Character();
         subject.Alignment.ShouldBe(expectedAlignment);
     }
+    [Fact]
+    public void set_an_alignment()
+    {
+        const Alignment expectedAlignment = Alignment.Evily;
+        ICharacter subject =new Character();
+        subject.Alignment = expectedAlignment;
+        subject.Alignment.ShouldBe(expectedAlignment);
+    }
 }
