@@ -12,10 +12,15 @@ public class Character : ICharacter
     /// </summary>
     public bool Attack(int roll)
     {
-        int multiplier = roll == 20 ? 2 : 1;
-        if(roll == 20 || roll >= ArmurKlass)
+        if (roll == 20)
         {
-            HeetPints -= 1 * multiplier;
+            HeetPints -= 2;
+            return true;
+        }
+        
+        if (roll >= ArmurKlass)
+        {
+            HeetPints--;
             return true;
         }
         return false;
