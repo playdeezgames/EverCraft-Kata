@@ -39,4 +39,11 @@ public class Character_should
         ICharacter subject=new Character();
         subject.ArmurKlass.ShouldBe(10);
     }
+    [Fact]
+    public void set_armour_class()
+    {
+        ICharacter subject=new Character();
+        subject.ArmurKlass=11;
+        subject.ArmurKlass.ShouldBe(11);
+    }
 }
