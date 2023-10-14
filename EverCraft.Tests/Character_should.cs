@@ -61,11 +61,12 @@ public class Character_should
     }
     [Theory]
     //[InlineData(20,true)]
-    [InlineData(10,true)]
-    [InlineData(9,false)]
-    public void get_so_attacked(int roll, bool expectedResult)
+    [InlineData(10,10,true)]
+    [InlineData(10,9,false)]
+    public void get_so_attacked(int ac, int roll, bool expectedResult)
     {
         ICharacter subject=new Character();
+        subject.ArmurKlass=ac;
         subject.Attack(roll).ShouldBe(expectedResult);
     }
 }
