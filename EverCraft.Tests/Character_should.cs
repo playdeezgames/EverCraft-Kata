@@ -52,4 +52,11 @@ public class Character_should
         ICharacter subject=new Character();
         subject.HeetPints.ShouldBe(5);
     }
+    [Fact]
+    public void set_heet_points()
+    {
+        ICharacter subject=new Character();
+        subject.HeetPints=6;
+        subject.HeetPints.ShouldBe(6);
+    }
 }
