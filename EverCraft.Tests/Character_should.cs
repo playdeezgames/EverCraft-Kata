@@ -70,11 +70,12 @@ public class Character_should
         subject.ArmurKlass=ac;
         subject.Attack(roll).ShouldBe(expectedResult);
     }
-    [Fact]
-    public void take_damage()
+    [Theory]
+    [InlineData(10,4)]
+    public void take_damage(int roll, int expectedHP)
     {
         ICharacter subject = new Character();
-        subject.Attack(10);
-        subject.HeetPints.ShouldBe(4);
+        subject.Attack(roll);
+        subject.HeetPints.ShouldBe(expectedHP);
     }
 }
