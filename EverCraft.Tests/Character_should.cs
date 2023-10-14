@@ -46,4 +46,10 @@ public class Character_should
         subject.ArmurKlass=11;
         subject.ArmurKlass.ShouldBe(11);
     }
+    [Fact]
+    public void have_heet_points()
+    {
+        ICharacter subject=new Character();
+        subject.HeetPints.ShouldBe(5);
+    }
 }
