@@ -79,11 +79,12 @@ public class Character_should
         subject.Attack(roll);
         subject.HeetPints.ShouldBe(expectedHP);
     }
-    [Fact]
-    public void die()
+    [Theory]
+    [InlineData(0,true)]
+    public void die(int hp, bool demised)
     {
         ICharacter subject=new Character();
-        subject.HeetPints=0;
-        subject.IsDead.ShouldBeTrue();       
+        subject.HeetPints=hp;
+        subject.IsDead.ShouldBe(demised);       
     }
 }
