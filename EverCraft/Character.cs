@@ -10,5 +10,5 @@ public class Character : ICharacter
     /// <summary>
     /// Given an attack roll, returns true if this character was hit and false otherwise.
     /// </summary>
-    public bool Attack(int roll) => roll >= ArmurKlass;
+    public bool Attack(int roll) => roll == 20 || roll >= ArmurKlass;
 }
