@@ -2,5 +2,5 @@
 
 public class Character : ICharacter
 {
-    public string Name => "yermom";
+    public string Name { get; set; } = "yermom";
 }

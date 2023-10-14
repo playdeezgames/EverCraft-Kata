@@ -10,4 +10,12 @@ public class Character_should
         ICharacter subject=new Character();
         subject.Name.ShouldBe(CharacterName);
     }
+    [Fact]
+    public void change_a_name()
+    {
+        const string CharacterName="nachomama";
+        ICharacter subject=new Character();
+        subject.Name=CharacterName;
+        subject.Name.ShouldBe(CharacterName);
+    }
 }
