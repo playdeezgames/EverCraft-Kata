@@ -18,4 +18,11 @@ public class Character_should
         subject.Name=CharacterName;
         subject.Name.ShouldBe(CharacterName);
     }
+    [Fact]
+    public void have_an_alignment()
+    {
+        const Alignment expectedAlignment = Alignment.Gud;
+        ICharacter subject =new Character();
+        subject.Alignment.ShouldBe(expectedAlignment);
+    }
 }
