@@ -70,4 +70,11 @@ public class Character_should
         subject.ArmurKlass=ac;
         subject.Attack(roll).ShouldBe(expectedResult);
     }
+    [Fact]
+    public void take_damage()
+    {
+        ICharacter subject = new Character();
+        subject.Attack(10);
+        subject.HeetPints.ShouldBe(4);
+    }
 }
