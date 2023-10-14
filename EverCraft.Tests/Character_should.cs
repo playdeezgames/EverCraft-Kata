@@ -33,4 +33,10 @@ public class Character_should
         subject.Alignment = expectedAlignment;
         subject.Alignment.ShouldBe(expectedAlignment);
     }
+    [Fact]
+    public void have_armour_class()
+    {
+        ICharacter subject=new Character();
+        subject.ArmurKlass.ShouldBe(10);
+    }
 }
