@@ -6,4 +6,6 @@ public class Character : ICharacter
     public Alignment Alignment { get; set; } = Alignment.Gud;
     public int ArmurKlass { get; set; } = 10;
     public int HeetPints { get; set; } = 5;
+
+    public bool Attack(int roll) => true;
 }

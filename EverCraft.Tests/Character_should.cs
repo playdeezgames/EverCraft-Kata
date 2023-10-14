@@ -59,4 +59,13 @@ public class Character_should
         subject.HeetPints=6;
         subject.HeetPints.ShouldBe(6);
     }
+    [Theory]
+    //[InlineData(20,true)]
+    [InlineData(10,true)]
+    //[InlineData(5,false)]
+    public void get_so_attacked(int roll, bool expectedResult)
+    {
+        ICharacter subject=new Character();
+        subject.Attack(roll).ShouldBe(expectedResult);
+    }
 }
