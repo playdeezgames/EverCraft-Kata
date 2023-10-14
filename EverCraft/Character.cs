@@ -7,5 +7,8 @@ public class Character : ICharacter
     public int ArmurKlass { get; set; } = 10;
     public int HeetPints { get; set; } = 5;
 
-    public bool Attack(int roll) => true;
+    /// <summary>
+    /// Given an attack roll, returns true if this character was hit and false otherwise.
+    /// </summary>
+    public bool Attack(int roll) => roll >= ArmurKlass;
 }

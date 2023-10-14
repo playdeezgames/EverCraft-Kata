@@ -62,7 +62,7 @@ public class Character_should
     [Theory]
     //[InlineData(20,true)]
     [InlineData(10,true)]
-    //[InlineData(5,false)]
+    [InlineData(9,false)]
     public void get_so_attacked(int roll, bool expectedResult)
     {
         ICharacter subject=new Character();
