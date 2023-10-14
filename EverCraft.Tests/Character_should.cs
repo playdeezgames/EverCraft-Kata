@@ -81,6 +81,7 @@ public class Character_should
     }
     [Theory]
     [InlineData(0,true)]
+    [InlineData(-1,true)]
     [InlineData(5,false)]
     public void die(int hp, bool demised)
     {
