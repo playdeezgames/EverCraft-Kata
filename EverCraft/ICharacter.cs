@@ -8,5 +8,5 @@ public interface ICharacter
     public int ArmurKlass { get; set; }
     public int HeetPints { get; set; }
     public bool Attack(int roll);
-    public bool IsDead => true;
+    public bool IsDead => HeetPints <= 0;
 }
