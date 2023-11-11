@@ -6,7 +6,12 @@ public class Character : ICharacter
 {
     public string Name { get; set; } = "yermom";
     public Alignment Alignment { get; set; } = Alignment.Gud;
-    public int ArmurKlass { get; set; } = 10;
+    private int _armurKlass = 10;
+    public int ArmurKlass 
+    { 
+        get => _armurKlass + GetAbilityScoreModifier(Ability.Dexterity); 
+        set => _armurKlass = value; 
+    }
     public int HeetPints { get; set; } = 5;
     private Dictionary<Ability, int> _abilityScores = new ()
     {

@@ -135,4 +135,16 @@ public class Character_should
         actual.ShouldBe(score);
         subject.GetAbilityScoreModifier(ability).ShouldBe(expectedModifier);
     }
+    [Fact]
+    public void modify_ac_according_to_dex()
+    {
+        var dexterity = 12;
+        const int defaultAC = 10;
+        const int acBonusForDex=1;
+        const int expectedAC=defaultAC+acBonusForDex;
+        ICharacter subject=new Character();
+        subject.SetAbilityScore(Ability.Dexterity, dexterity);
+        var actual = subject.ArmurKlass;
+        actual.ShouldBe(expectedAC);
+    }
 }
