@@ -30,4 +30,9 @@ public class Character : ICharacter
     {
         return 10;
     }
+
+    public int GetAbilityScoreModifier(Ability ability)
+    {
+        return 0;
+    }
 }

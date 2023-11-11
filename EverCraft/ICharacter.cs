@@ -9,6 +9,7 @@ public interface ICharacter
     public int HeetPints { get; set; }
     public bool Attack(int roll);
     int GetAbilityScore(Ability ability);
+    int GetAbilityScoreModifier(Ability ability);
 
     public bool IsDead => HeetPints <= 0;
 }

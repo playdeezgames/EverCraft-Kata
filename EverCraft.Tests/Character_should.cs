@@ -104,4 +104,19 @@ public class Character_should
         var actual = subject.GetAbilityScore(ability);
         actual.ShouldBe(expected);
     }
+    [Theory]
+    [InlineData(Ability.Strength)]
+    [InlineData(Ability.Dexterity)]
+    [InlineData(Ability.Constitution)]
+    [InlineData(Ability.Wisdom)]
+    [InlineData(Ability.Intelligence)]
+    [InlineData(Ability.Charisma)]
+    [InlineData(Ability.Comelyness)]
+    public void have_default_ability_score_modifiers(Ability ability)
+    {
+        const int expected = 0;
+        ICharacter subject=new Character();
+        var actual = subject.GetAbilityScoreModifier(ability);
+        actual.ShouldBe(expected);
+    }
 }
