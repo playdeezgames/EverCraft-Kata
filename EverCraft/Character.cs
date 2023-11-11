@@ -7,12 +7,17 @@ public class Character : ICharacter
     public string Name { get; set; } = "yermom";
     public Alignment Alignment { get; set; } = Alignment.Gud;
     private int _armurKlass = 10;
-    public int ArmurKlass 
+    public int LegacyArmurKlass 
     { 
-        get => _armurKlass + GetAbilityScoreModifier(Ability.Dexterity); 
-        set => _armurKlass = value; 
-    }
+        get => CurrentArmurKlass;
+        set => BaseArmurKlass=value;
+    }    
     public int HeetPints { get; set; } = 5;
+
+    public int CurrentArmurKlass => _armurKlass + GetAbilityScoreModifier(Ability.Dexterity);
+
+    public int BaseArmurKlass { set => _armurKlass = value; }
+
     private Dictionary<Ability, int> _abilityScores = new ()
     {
         [Ability.Strength] = 10,
@@ -35,7 +40,7 @@ public class Character : ICharacter
             return true;
         }
         
-        if (roll >= ArmurKlass)
+        if (roll >= LegacyArmurKlass)
         {
             HeetPints--;
             return true;

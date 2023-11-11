@@ -37,14 +37,14 @@ public class Character_should
     public void have_armour_class()
     {
         ICharacter subject=new Character();
-        subject.ArmurKlass.ShouldBe(10);
+        subject.LegacyArmurKlass.ShouldBe(10);
     }
     [Fact]
     public void set_armour_class()
     {
         ICharacter subject=new Character();
-        subject.ArmurKlass=11;
-        subject.ArmurKlass.ShouldBe(11);
+        subject.LegacyArmurKlass=11;
+        subject.LegacyArmurKlass.ShouldBe(11);
     }
     [Fact]
     public void have_heet_points()
@@ -67,7 +67,7 @@ public class Character_should
     public void get_so_attacked(int ac, int roll, bool expectedResult)
     {
         ICharacter subject=new Character();
-        subject.ArmurKlass=ac;
+        subject.LegacyArmurKlass=ac;
         subject.Attack(roll).ShouldBe(expectedResult);
     }
     [Theory]
@@ -144,7 +144,7 @@ public class Character_should
         const int expectedAC=defaultAC+acBonusForDex;
         ICharacter subject=new Character();
         subject.SetAbilityScore(Ability.Dexterity, dexterity);
-        var actual = subject.ArmurKlass;
+        var actual = subject.LegacyArmurKlass;
         actual.ShouldBe(expectedAC);
     }
 }
