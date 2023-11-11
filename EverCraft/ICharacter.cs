@@ -5,7 +5,6 @@ public interface ICharacter
 {
     public string Name {get;set;}
     public Alignment Alignment { get; set; }
-    public int LegacyArmurKlass { get; set; }
     public int CurrentArmurKlass{get;}
     public int BaseArmurKlass{set;}
     public int HeetPints { get; set; }

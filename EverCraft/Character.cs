@@ -7,11 +7,6 @@ public class Character : ICharacter
     public string Name { get; set; } = "yermom";
     public Alignment Alignment { get; set; } = Alignment.Gud;
     private int _armurKlass = 10;
-    public int LegacyArmurKlass 
-    { 
-        get => CurrentArmurKlass;
-        set => BaseArmurKlass=value;
-    }    
     public int HeetPints { get; set; } = 5;
 
     public int CurrentArmurKlass => _armurKlass + GetAbilityScoreModifier(Ability.Dexterity);
@@ -40,7 +35,7 @@ public class Character : ICharacter
             return true;
         }
         
-        if (roll >= LegacyArmurKlass)
+        if (roll >= CurrentArmurKlass)
         {
             HeetPints--;
             return true;
