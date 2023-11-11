@@ -120,18 +120,19 @@ public class Character_should
         actual.ShouldBe(expected);
     }
     [Theory]
-    [InlineData(Ability.Strength,12)]
-    [InlineData(Ability.Dexterity,12)]
-    [InlineData(Ability.Constitution,12)]
-    [InlineData(Ability.Wisdom,12)]
-    [InlineData(Ability.Intelligence,12)]
-    [InlineData(Ability.Charisma,12)]
-    [InlineData(Ability.Comelyness,12)]
-    public void set_ability_scores(Ability ability, int score)
+    [InlineData(Ability.Strength,12,1)]
+    [InlineData(Ability.Dexterity,11,0)]
+    [InlineData(Ability.Constitution,13,1)]
+    [InlineData(Ability.Wisdom,14,2)]
+    [InlineData(Ability.Intelligence,15,2)]
+    [InlineData(Ability.Charisma,16,3)]
+    [InlineData(Ability.Comelyness,17,3)]
+    public void set_ability_scores(Ability ability, int score, int expectedModifier)
     {
         ICharacter subject=new Character();
         subject.SetAbilityScore(ability, score);
         var actual = subject.GetAbilityScore(ability);
         actual.ShouldBe(score);
+        subject.GetAbilityScoreModifier(ability).ShouldBe(expectedModifier);
     }
 }
