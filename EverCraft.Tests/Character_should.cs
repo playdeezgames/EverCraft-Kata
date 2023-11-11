@@ -89,4 +89,13 @@ public class Character_should
         subject.HeetPints=hp;
         subject.IsDead.ShouldBe(demised);       
     }
+    [Fact]
+    public void have_default_ability_scores()
+    {
+        var ability = Ability.Strength;
+        var expected = 10;
+        ICharacter subject=new Character();
+        var actual = subject.GetAbilityScore(ability);
+        actual.ShouldBe(expected);
+    }
 }

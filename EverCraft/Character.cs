@@ -25,4 +25,9 @@ public class Character : ICharacter
         }
         return false;
     }
+
+    public int GetAbilityScore(Ability ability)
+    {
+        return 10;
+    }
 }
