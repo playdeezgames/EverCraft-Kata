@@ -68,7 +68,7 @@ This iteration covers core functionality for leveling, combat, and character att
 |   __4__   |    -3    |   __9__   |    -1    |  __14__   |    +2    |  __19__   |    +4    |
 |   __5__   |    -3    |  __10__   |     0    |  __15__   |    +2    |  __20__   |    +5    |
 
-#### Feature: Character Ability Modifiers Modify Attributes (HEY DUMMIES! YER HERE!)
+#### Feature: Character Ability Modifiers Modify Attributes (HEY DUMMIES! YER HERE!)(And dont fergit to delete the note!)
 
 > As a character I want to apply my ability modifiers improve my capabilities in combat so that I can vanquish my enemy with extreme prejudice
 
