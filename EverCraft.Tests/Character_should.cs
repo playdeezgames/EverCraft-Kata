@@ -150,6 +150,7 @@ public class Character_should
 
     // - add Constitution modifier to hit points (always at least 1 hit point)
     [Theory]
+    [InlineData(1, 1)]
     [InlineData(6, 3)]
     [InlineData(8, 4)]
     [InlineData(10, 5)]

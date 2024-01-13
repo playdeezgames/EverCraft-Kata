@@ -77,6 +77,7 @@ public class Character : ICharacter
         if (ability == Ability.Constitution)
         {
             HeetPints += GetAbilityScoreModifier(Ability.Constitution);
+            HeetPints = Math.Max(HeetPints, 1);
         }
     }
 }
