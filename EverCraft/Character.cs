@@ -71,5 +71,12 @@ public class Character : ICharacter
 
     public int GetAbilityScoreModifier(Ability ability)=>_modifiers[GetAbilityScore(ability)];
 
-    public void SetAbilityScore(Ability ability, int score) => _abilityScores[ability] = score;
+    public void SetAbilityScore(Ability ability, int score)
+    {
+        _abilityScores[ability] = score;
+        if (ability == Ability.Constitution)
+        {
+            HeetPints += GetAbilityScoreModifier(Ability.Constitution);
+        }
+    }
 }

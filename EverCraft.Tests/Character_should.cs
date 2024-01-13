@@ -147,4 +147,18 @@ public class Character_should
         var actual = subject.CurrentArmurKlass;
         actual.ShouldBe(expectedAC);
     }
+
+    // - add Constitution modifier to hit points (always at least 1 hit point)
+    [Fact]
+    public void add_constitution_modifier_to_hit_points()
+    {
+        const int constitution = 12;
+        const int expectedHP = 6;
+        ICharacter subject = new Character();
+
+        subject.SetAbilityScore(Ability.Constitution, constitution);
+
+        var actual = subject.HeetPints;
+        actual.ShouldBe(expectedHP);
+    }
 }
