@@ -149,11 +149,16 @@ public class Character_should
     }
 
     // - add Constitution modifier to hit points (always at least 1 hit point)
-    [Fact]
-    public void add_constitution_modifier_to_hit_points()
+    [Theory]
+    [InlineData(6, 3)]
+    [InlineData(8, 4)]
+    [InlineData(10, 5)]
+    [InlineData(12, 6)]
+    [InlineData(14, 7)]
+    [InlineData(16, 8)]
+    [InlineData(18, 9)]
+    public void add_constitution_modifier_to_hit_points(int constitution, int expectedHP)
     {
-        const int constitution = 12;
-        const int expectedHP = 6;
         ICharacter subject = new Character();
 
         subject.SetAbilityScore(Ability.Constitution, constitution);
