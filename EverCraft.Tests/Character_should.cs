@@ -167,4 +167,24 @@ public class Character_should
         var actual = subject.HeetPints;
         actual.ShouldBe(expectedHP);
     }
+
+    [Theory]
+    [InlineData(1)]
+    [InlineData(6)]
+    [InlineData(8)]
+    [InlineData(10)]
+    [InlineData(12)]
+    [InlineData(14)]
+    [InlineData(16)]
+    [InlineData(18)]
+    public void change_constitution_modifier_to_hit_points(int constitution)
+    {
+        ICharacter subject = new Character();
+
+        subject.SetAbilityScore(Ability.Constitution, constitution);
+        subject.SetAbilityScore(Ability.Constitution, 10);
+
+        var actual = subject.HeetPints;
+        actual.ShouldBe(5);
+    }
 }

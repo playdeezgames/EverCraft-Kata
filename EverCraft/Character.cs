@@ -7,7 +7,18 @@ public class Character : ICharacter
     public string Name { get; set; } = "yermom";
     public Alignment Alignment { get; set; } = Alignment.Gud;
     private int _armurKlass = 10;
-    public int HeetPints { get; set; } = 5;
+    public int BaseHP => Math.Max(1, 5 + GetAbilityScoreModifier(Ability.Constitution));
+    private int _wounds = 0;
+    public int HeetPints 
+    { 
+        get => BaseHP - _wounds; 
+        set
+        {
+            _wounds = BaseHP - value;
+        } 
+    }
+    
+
 
     public int CurrentArmurKlass => _armurKlass + GetAbilityScoreModifier(Ability.Dexterity);
 
@@ -71,13 +82,5 @@ public class Character : ICharacter
 
     public int GetAbilityScoreModifier(Ability ability)=>_modifiers[GetAbilityScore(ability)];
 
-    public void SetAbilityScore(Ability ability, int score)
-    {
-        _abilityScores[ability] = score;
-        if (ability == Ability.Constitution)
-        {
-            HeetPints += GetAbilityScoreModifier(Ability.Constitution);
-            HeetPints = Math.Max(HeetPints, 1);
-        }
-    }
+    public void SetAbilityScore(Ability ability, int score) => _abilityScores[ability] = score;
 }
