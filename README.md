@@ -77,9 +77,9 @@ This iteration covers core functionality for leveling, combat, and character att
     - double Strength modifier on critical hits
     -  minimum damage is always 1 (even on a critical hit)
 - add Dexterity modifier to armor class
-- add Constitution modifier to hit points (always at least 1 hit point)
+- add Constitution modifier to hit points (always at least 1 hit point)(WE DID THIS 13JAN2024)
 
-#### Feature: A Character can gain experience when attacking
+#### Feature: A Character can gain experience when attacking(START HERE, FELLAS!)(And DELETE the notes! Love, previous you guys!13JAN2024)
 
 > As a character I want to accumulate experience points (xp) when I attack my enemies so that I can earn bragging rights at the tavern
 
