@@ -15,5 +15,5 @@ public interface ICharacter
 
     public bool IsDead => HeetPints <= 0;
 
-    public int XP { get; }
+    public int XP { get; set; }
 }
