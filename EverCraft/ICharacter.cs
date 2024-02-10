@@ -14,4 +14,6 @@ public interface ICharacter
     void SetAbilityScore(Ability ability, int score);
 
     public bool IsDead => HeetPints <= 0;
+
+    public int XP { get; }
 }

@@ -187,4 +187,13 @@ public class Character_should
         var actual = subject.HeetPints;
         actual.ShouldBe(5);
     }
+
+    [Fact]
+    public void have_xp()
+    {
+        ICharacter subject = new Character();
+
+        var actual = subject.XP;
+        actual.ShouldBe(0);
+    }
 }
