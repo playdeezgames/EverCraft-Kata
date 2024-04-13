@@ -218,4 +218,16 @@ public class Character_should
         var actual = subject.Level;
         actual.ShouldBe(expectedLevel);
     }
+
+    [Theory]
+    [InlineData(0, 5)]
+    [InlineData(1000, 10)]
+    public void increase_hp_based_on_xp(int xp, int expectedHP)
+    {
+        ICharacter subject = new Character();
+        subject.XP = xp;
+        var actual = subject.HeetPints;
+
+        actual.ShouldBe(expectedHP);
+    }
 }
