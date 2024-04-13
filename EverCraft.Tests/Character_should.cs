@@ -205,4 +205,15 @@ public class Character_should
         var actual = subject.Level;
         actual.ShouldBe(1);
     }
+
+    [Theory]
+    [InlineData(1000, 2)]
+    public void gain_level_based_on_xp(int xp, int expectedLevel)
+    {
+        ICharacter subject = new Character();
+        subject.XP = xp;
+
+        var actual = subject.Level;
+        actual.ShouldBe(expectedLevel);
+    }
 }

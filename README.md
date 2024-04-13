@@ -93,8 +93,9 @@ This iteration covers core functionality for leveling, combat, and character att
 - After 1000 experience points, the character gains a level
     - 0 xp -> 1st Level
     - 1000 xp -> 2nd Level
-    - 2000 xp -> 3rd Level
-    - etc.
+    - 3000 xp -> 3rd Level
+    - 6000 xp -> 4th Level
+    - etc. Level N+1 is additional N * 1000
 - For each level:
     - hit points increase by 5 plus Con modifier
     - 1 is added to attack roll for every even level achieved

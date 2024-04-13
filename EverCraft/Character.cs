@@ -83,5 +83,5 @@ public class Character : ICharacter
 
     public void SetAbilityScore(Ability ability, int score) => _abilityScores[ability] = score;
 
-    public int Level => 1;
+    public int Level => (XP / 1000) + 1;
 }
