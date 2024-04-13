@@ -233,4 +233,17 @@ public class Character_should
 
         actual.ShouldBe(expectedHP);
     }
+
+    [Theory]
+    [InlineData(0, 12, 6)]
+    [InlineData(1000, 12, 12)]
+    public void increase_hp_based_on_xp_and_constitution(int xp, int constitution, int expectedHP)
+    {
+        ICharacter subject = new Character();
+        subject.XP = xp;
+        subject.SetAbilityScore(Ability.Constitution, constitution);
+        var actual = subject.HeetPints;
+
+        actual.ShouldBe(expectedHP);
+    }
 }
