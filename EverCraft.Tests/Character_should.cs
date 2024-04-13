@@ -207,7 +207,9 @@ public class Character_should
     }
 
     [Theory]
+    [InlineData(500, 1)]
     [InlineData(1000, 2)]
+    [InlineData(3000, 3)]
     public void gain_level_based_on_xp(int xp, int expectedLevel)
     {
         ICharacter subject = new Character();

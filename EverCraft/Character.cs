@@ -83,5 +83,18 @@ public class Character : ICharacter
 
     public void SetAbilityScore(Ability ability, int score) => _abilityScores[ability] = score;
 
-    public int Level => (XP / 1000) + 1;
+    public int Level => XPToLevel(XP);
+
+    private static int XPToLevel(int xp)
+    {
+        int level = 1;
+        int xpToNext = level * 1000;
+        while (xp >=  xpToNext)
+        {
+            xp -= xpToNext;
+            level++;
+            xpToNext = level * 1000;
+        }
+        return level;
+    }
 }
