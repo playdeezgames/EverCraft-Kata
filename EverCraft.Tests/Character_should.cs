@@ -222,6 +222,9 @@ public class Character_should
     [Theory]
     [InlineData(0, 5)]
     [InlineData(1000, 10)]
+    [InlineData(2000, 10)]
+    [InlineData(3000, 15)]
+    [InlineData(6000, 20)]
     public void increase_hp_based_on_xp(int xp, int expectedHP)
     {
         ICharacter subject = new Character();
