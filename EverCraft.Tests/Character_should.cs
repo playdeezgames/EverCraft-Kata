@@ -237,6 +237,7 @@ public class Character_should
     [Theory]
     [InlineData(0, 12, 6)]
     [InlineData(1000, 12, 12)]
+    [InlineData(1000, 1, 2)]
     public void increase_hp_based_on_xp_and_constitution(int xp, int constitution, int expectedHP)
     {
         ICharacter subject = new Character();

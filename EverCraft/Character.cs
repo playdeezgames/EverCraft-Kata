@@ -5,7 +5,7 @@ public class Character : ICharacter
     public string Name { get; set; } = "yermom";
     public Alignment Alignment { get; set; } = Alignment.Gud;
     private int _armurKlass = 10;
-    public int BaseHP => Math.Max(1, Level * (5 + GetAbilityScoreModifier(Ability.Constitution)));
+    public int BaseHP => Level * Math.Max(1, 5 + GetAbilityScoreModifier(Ability.Constitution));
     private int _wounds = 0;
     public int HeetPints 
     { 
