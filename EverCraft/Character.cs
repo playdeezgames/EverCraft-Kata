@@ -88,7 +88,7 @@ public class Character : ICharacter
     private static int XPToLevel(int xp, int currentLevel)
     {
         int xpToNext = currentLevel * 1000;
-        if (xp >= xpToNext) { return XPToLevel(xp - xpToNext, currentLevel + 1); }
-        return currentLevel;
+        if (xp < xpToNext) { return currentLevel; }
+        return XPToLevel(xp - xpToNext, currentLevel + 1);
     }
 }
