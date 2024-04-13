@@ -97,7 +97,15 @@ This iteration covers core functionality for leveling, combat, and character att
     - 6000 xp -> 4th Level
     - etc. Level N+1 is additional N * 1000
 - For each level:
-    - hit points increase by 5 plus Con modifier
+    - hit points increase by 5 plus Con modifier (April 13th 2024 - Finished up to here)
+
+April 13th 2024: Still needs to be completed.
+
+Notes: Character.Attack is insufficient to complete this spec. It does not have
+an attacker / defender concept and thus there is not enough information to
+calculate this. We must redesign this before proceeding. Likely a class "Attack"
+or some kind of control / logic object. We think you guys can do it. Don't let us down. Love, Past Grumpy and Capn.
+    
     - 1 is added to attack roll for every even level achieved
 
 ### Iteration 2 - Classes
