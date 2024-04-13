@@ -196,4 +196,13 @@ public class Character_should
         var actual = subject.XP;
         actual.ShouldBe(0);
     }
+
+    [Fact]
+    public void have_level()
+    {
+        ICharacter subject = new Character();
+
+        var actual = subject.Level;
+        actual.ShouldBe(1);
+    }
 }

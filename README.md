@@ -83,9 +83,9 @@ This iteration covers core functionality for leveling, combat, and character att
 
 > As a character I want to accumulate experience points (xp) when I attack my enemies so that I can earn bragging rights at the tavern
 
-- When a successful attack occurs, the character gains 10 experience points(GOT DONE FEB102024)
+- When a successful attack occurs, the character gains 10 experience points
 
-#### Feature: A Character Can Level (Start Here dummies: Feb 10th 2024, and delete notes!)
+#### Feature: A Character Can Level
 
 > As a character I want my experience points to increase my level and combat capabilities so that I can bring vengeance to my foes
 

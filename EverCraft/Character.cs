@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace EverCraft;
+﻿namespace EverCraft;
 
 public class Character : ICharacter
 {
@@ -84,4 +82,6 @@ public class Character : ICharacter
     public int GetAbilityScoreModifier(Ability ability)=>_modifiers[GetAbilityScore(ability)];
 
     public void SetAbilityScore(Ability ability, int score) => _abilityScores[ability] = score;
+
+    public int Level => 1;
 }
