@@ -17,6 +17,9 @@ public class Attack : IAttack
 
     public static void PerformAttack(ICharacter attacker, ICharacter defender, int roll)
     {
-        new Attack(attacker, defender).PerformAttack(roll);
+        if(defender.LegacyAttack(roll))
+        {
+            attacker.XP += 10;
+        }
     }
 }
