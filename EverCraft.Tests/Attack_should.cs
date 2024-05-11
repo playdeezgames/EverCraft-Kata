@@ -45,14 +45,18 @@ public class Attack_should
     }
 
     [Theory]
-    [InlineData(1, 0)]
-    [InlineData(2, 1)]
-    [InlineData(3, 1)]
-    [InlineData(4, 2)]
-    public void have_bonus_based_on_attacker_level(int initialLevel, int expectedBonus)
+    [InlineData(CharacterClass.Commoner, 1, 0)]
+    [InlineData(CharacterClass.Commoner, 2, 1)]
+    [InlineData(CharacterClass.Commoner, 3, 1)]
+    [InlineData(CharacterClass.Commoner, 4, 2)]
+    public void have_bonus_based_on_attacker_level(CharacterClass initialClass, int initialLevel, int expectedBonus)
     {
         // Arrange
-        ICharacter character = new Character() { XP = XPToLevel[initialLevel] };
+        ICharacter character = new Character() 
+        { 
+            XP = XPToLevel[initialLevel],
+            CharacterClass = initialClass,
+        };
 
         // Act
         int actual = character.AttackBonus();
