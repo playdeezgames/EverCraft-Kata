@@ -228,4 +228,12 @@ public class Character_should
 
         actual.ShouldBe(expectedHP);
     }
+
+    [Fact]
+    public void have_a_character_class()
+    {
+        ICharacter subject = new Character();
+
+        subject.CharacterClass.ShouldBe(CharacterClass.Commoner);
+    }
 }

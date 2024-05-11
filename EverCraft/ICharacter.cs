@@ -4,6 +4,7 @@ namespace EverCraft;
 public interface ICharacter
 {
     public string Name {get;set;}
+    public CharacterClass CharacterClass { get; }
     public Alignment Alignment { get; set; }
     public int CurrentArmurKlass{get;}
     public int BaseArmurKlass{set;}

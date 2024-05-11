@@ -3,6 +3,7 @@
 public class Character : ICharacter
 {
     public string Name { get; set; } = "yermom";
+    public CharacterClass CharacterClass { get; init; } = CharacterClass.Commoner;
     public Alignment Alignment { get; set; } = Alignment.Gud;
     private int _armurKlass = 10;
     public int BaseHP => Level * Math.Max(1, 5 + GetAbilityScoreModifier(Ability.Constitution));
