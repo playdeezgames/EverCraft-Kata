@@ -49,6 +49,10 @@ public class Attack_should
     [InlineData(CharacterClass.Commoner, 2, 1)]
     [InlineData(CharacterClass.Commoner, 3, 1)]
     [InlineData(CharacterClass.Commoner, 4, 2)]
+    [InlineData(CharacterClass.Fighter, 1, 1)]
+    [InlineData(CharacterClass.Fighter, 2, 2)]
+    [InlineData(CharacterClass.Fighter, 3, 3)]
+    [InlineData(CharacterClass.Fighter, 4, 4)]
     public void have_bonus_based_on_attacker_level(CharacterClass initialClass, int initialLevel, int expectedBonus)
     {
         // Arrange

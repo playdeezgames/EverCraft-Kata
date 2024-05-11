@@ -13,7 +13,11 @@ public static class Attack
         }
     }
 
-    public static int AttackBonus(this ICharacter attacker) => attacker.Level / 2;
+    public static int AttackBonus(this ICharacter attacker) => attacker.CharacterClass switch
+    {
+        CharacterClass.Fighter => attacker.Level,
+        _ => attacker.Level / 2,
+    };
 
     private static int CalculateDamage(int armurKlass, int roll, int bonus)
     {
