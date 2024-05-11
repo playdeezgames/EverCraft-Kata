@@ -1,8 +1,8 @@
 namespace EverCraft;
 
-public class Attack
+public static class Attack
 {
-    public static void PerformAttack(ICharacter attacker, ICharacter defender, int roll)
+    public static void PerformAttack(this ICharacter attacker, ICharacter defender, int roll)
     {
         if(defender.LegacyAttack(roll))
         {
