@@ -23,4 +23,21 @@ public class Attack_should
         actual.ShouldBe(expectedXP);
     }
 
+    [Theory]
+    [InlineData(0, 10, 4)]
+    [InlineData(1000, 9, 4)]
+    public void damage_defender_on_successful_attack(int initialXP, int roll, int expectedHP)
+    {
+        // Arrange
+        ICharacter attacker = new Character() { XP = initialXP };
+        ICharacter defender = new Character();
+
+        //Act
+        Attack.PerformAttack(attacker, defender, roll);
+
+        //Assert
+        int actual = defender.HeetPints;
+        actual.ShouldBe(expectedHP);
+    }
+
 }
