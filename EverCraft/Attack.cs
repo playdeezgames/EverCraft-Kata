@@ -14,4 +14,9 @@ public class Attack : IAttack
     }
 
     public Attack(ICharacter attacker, ICharacter defender) => (Attacker, _defender) = (attacker, defender);
+
+    public static void PerformAttack(ICharacter attacker, ICharacter defender, int roll)
+    {
+        new Attack(attacker, defender).PerformAttack(roll);
+    }
 }

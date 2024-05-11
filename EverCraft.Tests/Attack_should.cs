@@ -8,17 +8,15 @@ public class Attack_should
     public void reward_attacker_on_successful_attack()
     {
         // Arrange
-        IAttack subject;
         ICharacter attacker = new Character();
         ICharacter defender = new Character();
-        subject = new Attack(attacker, defender);
 
         const int roll = 10;
         //Act
-        subject.PerformAttack(roll);
+        Attack.PerformAttack(attacker, defender, roll);
 
         //Assert
-        int actual = subject.Attacker.XP;
+        int actual = attacker.XP;
         actual.ShouldBe(10);
     }
 }
