@@ -122,6 +122,21 @@ Classes that a character can have.
 > As a player I want to play a Fighter so that I can kick ass and take names
 
 - attacks roll is increased by 1 for every level instead of every other level
+
+Dear Future Selves,
+You got here on 20240511.
+The Fighter class "exists", but doesn't have the HeetPint bonus below.
+Good job, fellas.
+Capn wonders how y'all will feel about the enum in a month or whenever.
+He's blathering about the adapter pattern or something.
+Maybe you guys will have a better idea.
+We're counting on you, and we love you.
+Don't write back, because we're in the past and no longer exist.
+Don't write letters to people who don't exist.
+Duh.
+Love, TGGD and TCC, who doesn't want to be told what to do!
+LIVE FREE OR DIE!
+
 - has 10 hit points per level instead of 5
 
 > As a player I want to play a Rogue so that I can defeat my enemies with finesse
