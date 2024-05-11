@@ -7,7 +7,7 @@ public class Attack : IAttack
 
     public void PerformAttack(int roll)
     {
-        if(_defender.Attack(roll))
+        if(_defender.LegacyAttack(roll))
         {
             Attacker.XP += 10;
         }

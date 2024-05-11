@@ -37,7 +37,7 @@ public class Character : ICharacter
     /// <summary>
     /// Given an attack roll, returns true if this character was hit and false otherwise.
     /// </summary>
-    public bool Attack(int roll)
+    public bool LegacyAttack(int roll)
     {
         if (roll == 20)
         {

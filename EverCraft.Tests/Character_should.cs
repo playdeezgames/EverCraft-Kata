@@ -68,7 +68,7 @@ public class Character_should
     {
         ICharacter subject=new Character();
         subject.BaseArmurKlass=ac;
-        subject.Attack(roll).ShouldBe(expectedResult);
+        subject.LegacyAttack(roll).ShouldBe(expectedResult);
     }
     [Theory]
     [InlineData(10,4)]
@@ -76,7 +76,7 @@ public class Character_should
     public void take_damage(int roll, int expectedHP)
     {
         ICharacter subject = new Character();
-        subject.Attack(roll);
+        subject.LegacyAttack(roll);
         subject.HeetPints.ShouldBe(expectedHP);
     }
     [Theory]
