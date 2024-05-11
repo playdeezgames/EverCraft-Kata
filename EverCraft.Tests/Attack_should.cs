@@ -28,7 +28,8 @@ public class Attack_should
     [InlineData(0, 10, 4)]
     [InlineData(1000, 9, 4)]
     [InlineData(1000, 19, 4)]
-    // TO DO: Should test for natural 20
+    [InlineData(0, 20, 3)]
+    [InlineData(1000, 20, 3)]
     public void damage_defender_on_successful_attack(int initialXP, int roll, int expectedHP)
     {
         // Arrange
