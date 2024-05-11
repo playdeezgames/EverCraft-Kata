@@ -4,21 +4,21 @@ public static class Attack
 {
     public static void PerformAttack(this ICharacter attacker, ICharacter defender, int roll)
     {
-        bool success = false;
-        if (roll == 20)
-        {
-            defender.HeetPints -= 2;
-            success = true;
-        }
-        else if (roll + attacker.Level / 2 >= defender.CurrentArmurKlass)
-        {
-            defender.HeetPints--;
-            success = true;
-        }
+        int damage = CalculateDamage(defender.CurrentArmurKlass, roll, attacker.Level / 2);
 
-        if (success)
+        if (damage > 0)
         {
+            defender.HeetPints -= damage;
             attacker.XP += 10;
         }
+    }
+
+    public static int AttackBonus(this ICharacter attacker) => attacker.Level / 2;
+
+    private static int CalculateDamage(int armurKlass, int roll, int bonus)
+    {
+        if (roll == 20) { return 2; }
+        if (roll + bonus >= armurKlass) { return 1; }
+        return 0;
     }
 }

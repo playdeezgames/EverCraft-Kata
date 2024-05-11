@@ -3,6 +3,7 @@ using Shouldly;
 
 public class Attack_should
 {
+    public int[] XPToLevel = {0, 0, 1000, 3000, 6000};
 
     [Theory]
     [InlineData(1, 0)]
@@ -39,6 +40,23 @@ public class Attack_should
         //Assert
         int actual = defender.HeetPints;
         actual.ShouldBe(expectedHP);
+    }
+
+    [Theory]
+    [InlineData(1, 0)]
+    [InlineData(2, 1)]
+    [InlineData(3, 1)]
+    [InlineData(4, 2)]
+    public void have_bonus_based_on_attacker_level(int initialLevel, int expectedBonus)
+    {
+        // Arrange
+        ICharacter character = new Character() { XP = XPToLevel[initialLevel] };
+
+        // Act
+        int actual = character.AttackBonus();
+
+        // Assert
+        actual.ShouldBe(expectedBonus);
     }
 
 }
