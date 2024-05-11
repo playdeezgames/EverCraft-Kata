@@ -34,25 +34,6 @@ public class Character : ICharacter
         [Ability.Comelyness] = 10,
     };
 
-    /// <summary>
-    /// Given an attack roll, returns true if this character was hit and false otherwise.
-    /// </summary>
-    public bool LegacyAttack(int roll)
-    {
-        if (roll == 20)
-        {
-            HeetPints -= 2;
-            return true;
-        }
-        
-        if (roll >= CurrentArmurKlass)
-        {
-            HeetPints--;
-            return true;
-        }
-        return false;
-    }
-
     public int GetAbilityScore(Ability ability) => _abilityScores[ability];
 
     private static readonly IReadOnlyDictionary<int,int> _modifiers=

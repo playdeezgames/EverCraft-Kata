@@ -8,7 +8,6 @@ public interface ICharacter
     public int CurrentArmurKlass{get;}
     public int BaseArmurKlass{set;}
     public int HeetPints { get; set; }
-    public bool LegacyAttack(int roll);
     int GetAbilityScore(Ability ability);
     int GetAbilityScoreModifier(Ability ability);
     void SetAbilityScore(Ability ability, int score);

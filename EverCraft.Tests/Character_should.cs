@@ -59,26 +59,7 @@ public class Character_should
         subject.HeetPints=6;
         subject.HeetPints.ShouldBe(6);
     }
-    [Theory]
-    [InlineData(10,20,true)]
-    [InlineData(21,20,true)]
-    [InlineData(10,10,true)]
-    [InlineData(10,9,false)]
-    public void get_so_attacked(int ac, int roll, bool expectedResult)
-    {
-        ICharacter subject=new Character();
-        subject.BaseArmurKlass=ac;
-        subject.LegacyAttack(roll).ShouldBe(expectedResult);
-    }
-    [Theory]
-    [InlineData(10,4)]
-    [InlineData(20,3)]
-    public void take_damage(int roll, int expectedHP)
-    {
-        ICharacter subject = new Character();
-        subject.LegacyAttack(roll);
-        subject.HeetPints.ShouldBe(expectedHP);
-    }
+    
     [Theory]
     [InlineData(0,true)]
     [InlineData(-1,true)]
