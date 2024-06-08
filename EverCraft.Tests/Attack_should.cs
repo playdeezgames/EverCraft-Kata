@@ -43,6 +43,21 @@ public class Attack_should
         actual.ShouldBe(expectedHP);
     }
 
+    [Theory]
+    [InlineData(12, 10, 3)]
+    public void add_strength_modifier_to_damage(int strength, int roll, int expectedHP)
+    {
+        ICharacter attacker = new Character() {  };
+        attacker.SetAbilityScore(Ability.Strength, strength);
+        
+        ICharacter defender = new Character();
+
+        Attack.PerformAttack(attacker, defender, roll);
+
+        int actual = defender.HeetPints;
+        actual.ShouldBe(expectedHP);
+    }
+
     [Fact]
     public void deal_triple_damage_critical_when_rogue()
     {
