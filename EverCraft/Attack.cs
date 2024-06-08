@@ -7,9 +7,7 @@ public static class Attack
         int damage = CalculateDamage(
             defender.CurrentArmurKlass,
             roll,
-            attacker.AttackBonus(),
-            attacker.BaseDamage(),
-            attacker.CharacterClass.CriticalAttackDamageMultiplier());
+            attacker);
 
         if (damage > 0)
         {
@@ -27,11 +25,12 @@ public static class Attack
     private static int CalculateDamage(
         int armurKlass,
         int roll, 
-        int attackBonus,
-        int baseDamage,
-        int damageMultiplier)
+        ICharacter attacker)
     {
-        if (roll == 20) { return baseDamage * damageMultiplier; }
+        int attackBonus = attacker.AttackBonus();
+        int baseDamage = attacker.BaseDamage();
+        int criticalDamageMultiplier = attacker.CharacterClass.CriticalDamageMultiplier();
+        if (roll == 20) { return baseDamage * criticalDamageMultiplier; }
         if (roll + attackBonus >= armurKlass) { return baseDamage; }
         return 0;
     }

@@ -15,7 +15,7 @@ public static class CharacterClassExtensions
         _ => 5,
     };
 
-    public static int CriticalAttackDamageMultiplier(this CharacterClass characterClass) => characterClass switch
+    public static int CriticalDamageMultiplier(this CharacterClass characterClass) => characterClass switch
     {
         CharacterClass.Rogue => 3,
         _ => 2,
