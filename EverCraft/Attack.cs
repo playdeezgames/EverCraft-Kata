@@ -27,11 +27,8 @@ public static class Attack
         int roll, 
         ICharacter attacker)
     {
-        int attackBonus = attacker.AttackBonus();
-        int baseDamage = attacker.BaseDamage();
-        int criticalDamageMultiplier = attacker.CharacterClass.CriticalDamageMultiplier();
-        if (roll == 20) { return baseDamage * criticalDamageMultiplier; }
-        if (roll + attackBonus >= armurKlass) { return baseDamage; }
+        if (roll == 20) { return attacker.BaseDamage() * attacker.CharacterClass.CriticalDamageMultiplier(); }
+        if (roll + attacker.AttackBonus() >= armurKlass) { return attacker.BaseDamage(); }
         return 0;
     }
 }
