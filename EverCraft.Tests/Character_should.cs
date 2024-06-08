@@ -232,6 +232,7 @@ public class Character_should
     [Theory]
     [InlineData(CharacterClass.Commoner)]
     [InlineData(CharacterClass.Fighter)]
+    [InlineData(CharacterClass.Rogue)]
     public void have_a_character_class(CharacterClass expectedClass)
     {
         ICharacter subject = new Character() { CharacterClass = expectedClass };
