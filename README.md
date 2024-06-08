@@ -127,6 +127,15 @@ Classes that a character can have.
 > As a player I want to play a Rogue so that I can defeat my enemies with finesse
 
 - does triple damage on critical hits
+
+
+Dear Future Selves,
+You made it here! You did a lot of refactoring.
+Good job. We validate you.
+We didn't have a test for the rogue's triple modifier for negative strength bonus, which will be dex bonus.
+Love,
+Yer Past Younger and Moar Handsome Selves
+
 - ignores an opponents Dexterity modifier (if positive) to Armor Class when attacking
 - adds Dexterity modifier to attacks instead of Strength
 - cannot have Good alignment
