@@ -4,7 +4,7 @@ public static class Attack
 {
     public static void PerformAttack(this ICharacter attacker, ICharacter defender, int roll)
     {
-        int damage = CalculateDamage(defender.CurrentArmurKlass, roll, attacker.AttackBonus(), attacker.CharacterClass is CharacterClass.Rogue ? 3 : 2);
+        int damage = CalculateDamage(defender.CurrentArmurKlass, roll, attacker.AttackBonus(), attacker.CharacterClass.CriticalAttackDamageMultiplier());
 
         if (damage > 0)
         {
