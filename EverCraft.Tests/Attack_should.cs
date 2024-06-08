@@ -44,6 +44,17 @@ public class Attack_should
         actual.ShouldBe(expectedHP);
     }
 
+    [Fact]
+    public void deal_triple_damage_critical_when_rogue()
+    {
+        ICharacter attacker = new Character() { CharacterClass = CharacterClass.Rogue };
+        ICharacter defender = new Character();
+
+        Attack.PerformAttack(attacker, defender, 20);
+
+        defender.HeetPints.ShouldBe(2);
+    }
+
     [Theory]
     [InlineData(CharacterClass.Commoner, 1, 0)]
     [InlineData(CharacterClass.Commoner, 2, 1)]
