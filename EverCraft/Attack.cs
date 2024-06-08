@@ -21,8 +21,9 @@ public static class Attack
 
     private static int CalculateDamage(int armurKlass, int roll, int attackBonus, int damageBonus = 0, int damageMultiplier = 2)
     {
-        if (roll == 20) { return (1 + damageBonus) * damageMultiplier; }
-        if (roll + attackBonus >= armurKlass) { return 1 + damageBonus; }
+        int baseDamage = 1 + damageBonus;
+        if (roll == 20) { return baseDamage * damageMultiplier; }
+        if (roll + attackBonus >= armurKlass) { return baseDamage; }
         return 0;
     }
 }
