@@ -3,7 +3,7 @@ using Shouldly;
 
 public class Attack_should
 {
-    public int[] XPToLevel = {0, 0, 1000, 3000, 6000};
+    public static readonly int[] XPToLevel = {0, 0, 1000, 3000, 6000};
 
     [Theory]
     [InlineData(1, 0)]
