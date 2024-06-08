@@ -8,7 +8,7 @@ public static class Attack
             defender.CurrentArmurKlass,
             roll,
             attacker.AttackBonus(),
-            (1 + attacker.GetAbilityScoreModifier(Ability.Strength)),
+            attacker.BaseDamage(),
             attacker.CharacterClass.CriticalAttackDamageMultiplier());
 
         if (damage > 0)

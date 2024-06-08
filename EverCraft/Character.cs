@@ -73,4 +73,6 @@ public class Character : ICharacter
         if (xp < xpToNext) { return currentLevel; }
         return XPToLevel(xp - xpToNext, currentLevel + 1);
     }
+
+    public int BaseDamage() => 1 + GetAbilityScoreModifier(Ability.Strength);
 }

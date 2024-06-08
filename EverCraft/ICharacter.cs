@@ -12,6 +12,7 @@ public interface ICharacter
     int GetAbilityScore(Ability ability);
     int GetAbilityScoreModifier(Ability ability);
     void SetAbilityScore(Ability ability, int score);
+    int BaseDamage();
 
     public bool IsDead => HeetPints <= 0;
 
