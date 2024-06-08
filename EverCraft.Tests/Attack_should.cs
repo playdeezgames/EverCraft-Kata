@@ -47,6 +47,7 @@ public class Attack_should
     [InlineData(12, 10, 3)]
     [InlineData(12, 20, 1)]
     [InlineData(8, 10, 4)]
+    [InlineData(8, 20, 3)]
     public void add_strength_modifier_to_damage(int strength, int roll, int expectedHP)
     {
         ICharacter attacker = new Character() {  };
