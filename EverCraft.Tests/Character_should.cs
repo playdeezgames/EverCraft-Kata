@@ -246,7 +246,7 @@ public class Character_should
     [InlineData(3, 30)]
     public void have_10_hp_per_level_when_fighter(int level, int expectedHP)
     {
-        ICharacter subject = new Character() { CharacterClass = CharacterClass.Fighter, XP = Attack_should.XPToLevel[level] };
+        ICharacter subject = new Character() { CharacterClass = CharacterClass.Fighter, XP = CharacterUtils.XPToLevel[level] };
 
         subject.HeetPints.ShouldBe(expectedHP);
     }
