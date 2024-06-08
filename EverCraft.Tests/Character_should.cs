@@ -241,6 +241,8 @@ public class Character_should
 
     [Theory]
     [InlineData(1, 10)]
+    [InlineData(2, 20)]
+    [InlineData(3, 30)]
     public void have_10_hp_per_level_when_fighter(int level, int expectedHP)
     {
         ICharacter subject = new Character() { CharacterClass = CharacterClass.Fighter, XP = Attack_should.XPToLevel[level] };
