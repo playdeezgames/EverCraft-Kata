@@ -74,5 +74,5 @@ public class Character : ICharacter
         return XPToLevel(xp - xpToNext, currentLevel + 1);
     }
 
-    public int BaseDamage() => 1 + GetAbilityScoreModifier(Ability.Strength);
+    public int BaseDamage() => Math.Max(1, 1 + GetAbilityScoreModifier(Ability.Strength));
 }
