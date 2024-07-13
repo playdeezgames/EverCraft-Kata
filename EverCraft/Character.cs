@@ -10,7 +10,7 @@ public class Character : ICharacter
         init
         {
             _class = value;
-            if (_class is CharacterClass.Rogue)
+            if (_class is CharacterClass.Rogue && _alignment is Alignment.Gud)
             {
                 _alignment = Alignment.Evily;
             }
