@@ -66,9 +66,8 @@ public class Attack_should
     [InlineData(12, 12, 10, 3)]
     [InlineData(10, 8, 10, 4)]
     [InlineData(8, 8, 10, 4)]
-
     [InlineData(10, 12, 20, -1)]
-    // [InlineData(10, 8, 20, 3)]
+    [InlineData(10, 8, 20, 2)]
     public void add_dexterity_modifier_to_damage_when_attacking_as_a_rogue(int strength, int dexterity, int roll, int expectedHP)
     {
         ICharacter attacker = new Character() { CharacterClass = CharacterClass.Rogue };
