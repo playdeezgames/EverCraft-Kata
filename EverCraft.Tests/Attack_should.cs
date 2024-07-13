@@ -62,6 +62,22 @@ public class Attack_should
     }
 
     [Fact]
+    public void rogue_bypasses_armorclass_bonus_when_positive()
+    {
+        ICharacter attacker = new Character() { CharacterClass = CharacterClass.Rogue };
+        ICharacter defender = new Character();
+
+        // +1 Dexterity bonus
+        defender.SetAbilityScore(Ability.Dexterity, 12);
+
+        int roll = 10;
+        Attack.PerformAttack(attacker, defender, roll);
+
+        int actual = defender.HeetPints;
+        actual.ShouldBe(4);
+    }
+
+    [Fact]
     public void deal_triple_damage_critical_when_rogue()
     {
         ICharacter attacker = new Character() { CharacterClass = CharacterClass.Rogue };
