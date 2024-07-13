@@ -12,13 +12,13 @@ public static class Attack
             defender.HeetPints -= damage;
             attacker.XP += 10;
         }
-        int CalculateDefenderArmorKlass(CharacterClass attackerClass, ICharacter defender)
-        {
-            return attackerClass switch {
-                CharacterClass.Rogue when defender.GetAbilityScoreModifier(Ability.Dexterity) > 0 => defender.BaseArmurKlass,
-                _ => defender.CurrentArmurKlass(),
-            };
-        }
+    }
+
+    private static int CalculateDefenderArmorKlass(CharacterClass attackerClass, ICharacter defender)
+    {
+        if (attackerClass is not CharacterClass.Rogue) { return defender.ArmorClassWithModfier(); }
+        if (defender.GetAbilityScoreModifier(Ability.Dexterity) <= 0) { return defender.ArmorClassWithModfier(); }
+        return defender.BaseArmurKlass;
     }
 
     public static int AttackBonus(this ICharacter attacker) => attacker.CharacterClass switch

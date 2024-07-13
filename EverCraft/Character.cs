@@ -19,7 +19,7 @@ public class Character : ICharacter
     
 
 
-    public int CurrentArmurKlass() => _armurKlass + GetAbilityScoreModifier(Ability.Dexterity);
+    public int ArmorClassWithModfier() => _armurKlass + GetAbilityScoreModifier(Ability.Dexterity);
 
     public int BaseArmurKlass { get => _armurKlass; set => _armurKlass = value; }
     public int XP { get; set; } = 0;
