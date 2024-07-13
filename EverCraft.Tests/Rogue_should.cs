@@ -10,6 +10,19 @@ public class Rogue_should
     }
 
     [Fact]
+    public void not_be_good_alignment_flipped()
+    {
+        Should.Throw<ArgumentException>(() =>
+        {
+            ICharacter attacker = new Character()
+            {
+                Alignment = Alignment.Gud,
+                CharacterClass = CharacterClass.Rogue
+            };
+        });
+    }
+
+    [Fact]
     public void may_not_be_changed_to_good_alignment()
     {
         ICharacter character = new Character() { CharacterClass = CharacterClass.Rogue };

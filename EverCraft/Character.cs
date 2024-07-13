@@ -9,17 +9,17 @@ public class Character : ICharacter
         get => _class; 
         init
         {
-            _class = value;
-            if (_class is CharacterClass.Rogue && _alignment is Alignment.Gud)
+            if (value is CharacterClass.Rogue && _alignment.HasValue && _alignment.Value is Alignment.Gud)
             {
-                _alignment = Alignment.Evily;
+                throw new ArgumentException();
             }
+            _class = value;
         }
     }
-    private Alignment _alignment = Alignment.Gud;
+    private Alignment? _alignment;
     public Alignment Alignment 
     { 
-        get => _alignment; 
+        get => _alignment ?? (_class is CharacterClass.Rogue ? Alignment.Evily : Alignment.Gud);
         set
         {
             if (_class is CharacterClass.Rogue && value is Alignment.Gud)

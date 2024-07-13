@@ -129,8 +129,9 @@ Classes that a character can have.
 - does triple damage on critical hits
 - ignores an opponents Dexterity modifier (if positive) to Armor Class when attacking
 - adds Dexterity modifier to attacks instead of Strength
-
 - cannot have Good alignment
+
+
 
 > As a player I want to play a Monk so that I can enjoy being an Asian martial-arts archetype in a Medieval European setting
 
