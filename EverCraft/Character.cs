@@ -3,8 +3,32 @@
 public class Character : ICharacter
 {
     public string Name { get; set; } = "yermom";
-    public CharacterClass CharacterClass { get; init; } = CharacterClass.Commoner;
-    public Alignment Alignment { get; set; } = Alignment.Gud;
+    private CharacterClass _class = CharacterClass.Commoner;
+    public CharacterClass CharacterClass 
+    { 
+        get => _class; 
+        init
+        {
+            _class = value;
+            if (_class is CharacterClass.Rogue)
+            {
+                _alignment = Alignment.Evily;
+            }
+        }
+    }
+    private Alignment _alignment = Alignment.Gud;
+    public Alignment Alignment 
+    { 
+        get => _alignment; 
+        set
+        {
+            if (_class is CharacterClass.Rogue && value is Alignment.Gud)
+            {
+                throw new ArgumentException();
+            }
+            _alignment = value;
+        }
+    }
     private int _armurKlass = 10;
     public int BaseHP => Level * Math.Max(1, CharacterClass.BaseHPModifierPerLevel() + GetAbilityScoreModifier(Ability.Constitution));
     private int _wounds = 0;
