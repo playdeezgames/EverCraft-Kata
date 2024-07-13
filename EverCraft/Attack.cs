@@ -4,13 +4,20 @@ public static class Attack
 {
     public static void PerformAttack(this ICharacter attacker, ICharacter defender, int roll)
     {
-        int armorClass = attacker.CharacterClass is CharacterClass.Rogue ? defender.BaseArmurKlass : defender.CurrentArmurKlass();
+        int armorClass = CalculateDefenderArmorKlass(attacker.CharacterClass, defender);
         int damage = CalculateDamage(armorClass, roll, attacker);
 
         if (damage > 0)
         {
             defender.HeetPints -= damage;
             attacker.XP += 10;
+        }
+        int CalculateDefenderArmorKlass(CharacterClass attackerClass, ICharacter defender)
+        {
+            return attackerClass switch {
+                CharacterClass.Rogue when defender.GetAbilityScoreModifier(Ability.Dexterity) > 0 => defender.BaseArmurKlass,
+                _ => defender.CurrentArmurKlass(),
+            };
         }
     }
 

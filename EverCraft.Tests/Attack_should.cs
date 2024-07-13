@@ -62,13 +62,17 @@ public class Attack_should
     }
 
     [Theory]
+    // Bonuses
     [InlineData(12, 10, 4)]
+    [InlineData(14, 10, 4)]
+    // Penalties
+    [InlineData(8, 9, 4)]
+    [InlineData(1, 5, 4)]
     public void rogue_bypasses_armorclass_bonus_when_positive(int defenderDexterity, int roll, int expectedHP)
     {
         ICharacter attacker = new Character() { CharacterClass = CharacterClass.Rogue };
         ICharacter defender = new Character();
 
-        // +1 Dexterity bonus
         defender.SetAbilityScore(Ability.Dexterity, defenderDexterity);
 
         Attack.PerformAttack(attacker, defender, roll);
