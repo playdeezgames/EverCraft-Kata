@@ -61,20 +61,20 @@ public class Attack_should
         actual.ShouldBe(expectedHP);
     }
 
-    [Fact]
-    public void rogue_bypasses_armorclass_bonus_when_positive()
+    [Theory]
+    [InlineData(12, 10, 4)]
+    public void rogue_bypasses_armorclass_bonus_when_positive(int defenderDexterity, int roll, int expectedHP)
     {
         ICharacter attacker = new Character() { CharacterClass = CharacterClass.Rogue };
         ICharacter defender = new Character();
 
         // +1 Dexterity bonus
-        defender.SetAbilityScore(Ability.Dexterity, 12);
+        defender.SetAbilityScore(Ability.Dexterity, defenderDexterity);
 
-        int roll = 10;
         Attack.PerformAttack(attacker, defender, roll);
 
         int actual = defender.HeetPints;
-        actual.ShouldBe(4);
+        actual.ShouldBe(expectedHP);
     }
 
     [Fact]
