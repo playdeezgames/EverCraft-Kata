@@ -4,7 +4,7 @@ public static class Attack
 {
     public static void PerformAttack(this ICharacter attacker, ICharacter defender, int roll)
     {
-        int damage = CalculateDamage(defender.CurrentArmurKlass, roll, attacker);
+        int damage = CalculateDamage(defender.CurrentArmurKlass(), roll, attacker);
 
         if (damage > 0)
         {

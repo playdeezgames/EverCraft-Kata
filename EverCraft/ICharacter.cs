@@ -6,7 +6,7 @@ public interface ICharacter
     public string Name {get;set;}
     public CharacterClass CharacterClass { get; }
     public Alignment Alignment { get; set; }
-    public int CurrentArmurKlass{get;}
+    public int CurrentArmurKlass();
     public int BaseArmurKlass{set;}
     public int HeetPints { get; set; }
     int GetAbilityScore(Ability ability);

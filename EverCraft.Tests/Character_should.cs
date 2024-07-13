@@ -37,14 +37,14 @@ public class Character_should
     public void have_armour_class()
     {
         ICharacter subject=new Character();
-        subject.CurrentArmurKlass.ShouldBe(10);
+        subject.CurrentArmurKlass().ShouldBe(10);
     }
     [Fact]
     public void set_armour_class()
     {
         ICharacter subject=new Character();
         subject.BaseArmurKlass=11;
-        subject.CurrentArmurKlass.ShouldBe(11);
+        subject.CurrentArmurKlass().ShouldBe(11);
     }
     [Fact]
     public void have_heet_points()
@@ -125,7 +125,7 @@ public class Character_should
         const int expectedAC=defaultAC+acBonusForDex;
         ICharacter subject=new Character();
         subject.SetAbilityScore(Ability.Dexterity, dexterity);
-        var actual = subject.CurrentArmurKlass;
+        var actual = subject.CurrentArmurKlass();
         actual.ShouldBe(expectedAC);
     }
 
