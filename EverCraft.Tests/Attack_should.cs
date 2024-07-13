@@ -62,6 +62,25 @@ public class Attack_should
     }
 
     [Theory]
+    [InlineData(10, 12, 10, 3)]
+    // [InlineData(10, 12, 20, 1)]
+    // [InlineData(10, 8, 10, 4)]
+    // [InlineData(10, 8, 20, 3)]
+    public void add_dexterity_modifier_to_damage_when_attacking_as_a_rogue(int strength, int dexterity, int roll, int expectedHP)
+    {
+        ICharacter attacker = new Character() { CharacterClass = CharacterClass.Rogue };
+        attacker.SetAbilityScore(Ability.Strength, strength);
+        attacker.SetAbilityScore(Ability.Dexterity, dexterity);
+        
+        ICharacter defender = new Character();
+
+        Attack.PerformAttack(attacker, defender, roll);
+
+        int actual = defender.HeetPints;
+        actual.ShouldBe(expectedHP);  
+    }
+
+    [Theory]
     // Bonuses
     [InlineData(12, 10, 4)]
     [InlineData(14, 10, 4)]

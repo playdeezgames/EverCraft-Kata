@@ -74,5 +74,13 @@ public class Character : ICharacter
         return XPToLevel(xp - xpToNext, currentLevel + 1);
     }
 
-    public int BaseDamage() => Math.Max(1, 1 + GetAbilityScoreModifier(Ability.Strength));
+    public int BaseDamage()
+    {
+        var bonusAbility = CharacterClass switch
+        {
+            CharacterClass.Rogue => Ability.Dexterity,
+            _ => Ability.Strength,
+        };
+        return Math.Max(1, 1 + GetAbilityScoreModifier(bonusAbility));
+    }
 }
