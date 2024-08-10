@@ -131,14 +131,20 @@ Classes that a character can have.
 - adds Dexterity modifier to attacks instead of Strength
 - cannot have Good alignment
 
-
+You made it here.
+There are regerts about characterclass and alignment setting, and perhaps you will consider a constructor. Or maybe you hate freedom.
+Lots of goofy rogue specific codes this time.
+Hint: make a Monk_should set of tests for the next thing.
+Or don't. Up to you.
+Love,
+Yer past selves.
 
 > As a player I want to play a Monk so that I can enjoy being an Asian martial-arts archetype in a Medieval European setting
 
 - has 6 hit point per level instead of 5
 - does 3 points of damage instead of 1 when successfully attacking
 - adds Wisdom modifier (if positive) to Armor Class in addition to Dexterity
-- attack roll is increased by 1 every 2nd and 3rd level
+
 
 > As a player I want to play a Paladin so that I can smite evil, write wrongs, and be a self-righteous jerk
 
